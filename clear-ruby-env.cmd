@@ -1,0 +1,10 @@
+@echo off
+
+@rem restoring original env vars if it was previously modified by script.
+if DEFINED PATH_WITHOUT_RUBY_ENV set PATH=%PATH_WITHOUT_RUBY_ENV%
+if DEFINED GEM_HOME_WITHOUT_RUBY_ENV set GEM_HOME=%GEM_HOME_WITHOUT_RUBY_ENV%
+if DEFINED GEM_PATH_WITHOUT_RUBY_ENV set GEM_PATH=%GEM_PATH_WITHOUT_RUBY_ENV%
+set RUBIES_HOME=
+set RUBY=
+set GEMSET_NAME=
+set RUBY_HOME=
