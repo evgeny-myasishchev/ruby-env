@@ -23,9 +23,11 @@ if NOT DEFINED GEMSET_NAME (
 set RUBY_HOME=%RUBIES_HOME%\%RUBY%
 
 if NOT EXIST %RUBY_HOME%\bin\ruby.exe (
-    echo %RUBY_HOME%\bin\ruby.exe does not exist. 
-    echo Please make sure ruby is installed at path: %RUBY_HOME%\
-    exit /b 1
+    if NOT EXIST %RUBY_HOME%\bin\jruby.bat (
+        echo %RUBY_HOME%\bin\[ruby.exe|jruby.bat] does not exist. 
+        echo Please make sure ruby is installed at path: %RUBY_HOME%\
+        exit /b 1
+    )
 )
 
 set PATH_WITHOUT_RUBY_ENV=%PATH%
